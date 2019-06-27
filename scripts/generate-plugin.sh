@@ -55,7 +55,7 @@ fi
 
 PLUGIN_TYPE="$1"
 PLUGIN_NAME="$2"
-PROJECT_DIR="$(readlink -f $3)"
+PROJECT_DIR="$(realpath $3)"
 
 if [ $PLUGIN_TYPE != "autonomy" ] && [ $PLUGIN_TYPE != "motion" ]  && \
    [ $PLUGIN_TYPE != "interaction" ] && [ $PLUGIN_TYPE != "controller" ] && \
@@ -72,7 +72,7 @@ then
     echo "ProjectDirectory doesn't exist."
     exit 1
 fi
-PROJECT_DIR=$(readlink -f "${PROJECT_DIR}")
+PROJECT_DIR=$(realpath "${PROJECT_DIR}")
 PROJECT_NAME=$(basename "${PROJECT_DIR}")
 
 HEADER_GUARD="INCLUDE_${PROJECT_NAME}_PLUGINS_${PLUGIN_TYPE}_${PLUGIN_NAME}_${PLUGIN_NAME}_H_"
@@ -86,10 +86,10 @@ pushd ${DIR} >& /dev/null
 ###############################################################################
 # Use the plugin template to generate the plugin
 ###############################################################################
-H_FILE_IN=$(readlink -f ./templates/$PLUGIN_TYPE/PluginTemplate.h)
-CPP_FILE_IN=$(readlink -f ./templates/$PLUGIN_TYPE/PluginTemplate.cpp)
-XML_FILE_IN=$(readlink -f ./templates/$PLUGIN_TYPE/PluginTemplate.xml)
-CMAKE_FILE_IN=$(readlink -f ./templates/$PLUGIN_TYPE/CMakeLists.txt)
+H_FILE_IN=$(realpath ./templates/$PLUGIN_TYPE/PluginTemplate.h)
+CPP_FILE_IN=$(realpath ./templates/$PLUGIN_TYPE/PluginTemplate.cpp)
+XML_FILE_IN=$(realpath ./templates/$PLUGIN_TYPE/PluginTemplate.xml)
+CMAKE_FILE_IN=$(realpath ./templates/$PLUGIN_TYPE/CMakeLists.txt)
 
 OUT_SRC_DIR="${PROJECT_DIR}/src/plugins/${PLUGIN_TYPE}/${PLUGIN_NAME}"
 OUT_H_DIR="${PROJECT_DIR}/include/${PROJECT_NAME}/plugins/${PLUGIN_TYPE}/${PLUGIN_NAME}"

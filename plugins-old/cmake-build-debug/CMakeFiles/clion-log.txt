@@ -1,0 +1,81 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/yuhongc/scrimmage/my-scrimmage-plugins
+-- The C compiler identification is AppleClang 10.0.1.10010046
+-- The CXX compiler identification is AppleClang 10.0.1.10010046
+-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc
+-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++
+-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+CMake Error at src/CMakeLists.txt:3 (ADD_SUBDIRECTORY):
+  The source directory
+
+    /Users/yuhongc/scrimmage/my-scrimmage-plugins/src/CMakeFiles
+
+  does not contain a CMakeLists.txt file.
+
+
+CMake Error at src/plugins/CMakeLists.txt:6 (ADD_SUBDIRECTORY):
+  The source directory
+
+    /Users/yuhongc/scrimmage/my-scrimmage-plugins/src/plugins/CMakeFiles
+
+  does not contain a CMakeLists.txt file.
+
+
+CMake Error at src/plugins/autonomy/CMakeLists.txt:6 (ADD_SUBDIRECTORY):
+  The source directory
+
+    /Users/yuhongc/scrimmage/my-scrimmage-plugins/src/plugins/autonomy/CMakeFiles
+
+  does not contain a CMakeLists.txt file.
+
+
+CMake Error at src/plugins/controller/CMakeLists.txt:6 (ADD_SUBDIRECTORY):
+  The source directory
+
+    /Users/yuhongc/scrimmage/my-scrimmage-plugins/src/plugins/controller/CMakeFiles
+
+  does not contain a CMakeLists.txt file.
+
+
+CMake Error at src/plugins/interaction/CMakeLists.txt:6 (ADD_SUBDIRECTORY):
+  The source directory
+
+    /Users/yuhongc/scrimmage/my-scrimmage-plugins/src/plugins/interaction/CMakeFiles
+
+  does not contain a CMakeLists.txt file.
+
+
+CMake Error at src/plugins/metrics/CMakeLists.txt:6 (ADD_SUBDIRECTORY):
+  The source directory
+
+    /Users/yuhongc/scrimmage/my-scrimmage-plugins/src/plugins/metrics/CMakeFiles
+
+  does not contain a CMakeLists.txt file.
+
+
+CMake Error at src/plugins/motion/CMakeLists.txt:6 (ADD_SUBDIRECTORY):
+  The source directory
+
+    /Users/yuhongc/scrimmage/my-scrimmage-plugins/src/plugins/motion/CMakeFiles
+
+  does not contain a CMakeLists.txt file.
+
+
+CMake Error at src/plugins/sensor/CMakeLists.txt:6 (ADD_SUBDIRECTORY):
+  The source directory
+
+    /Users/yuhongc/scrimmage/my-scrimmage-plugins/src/plugins/sensor/CMakeFiles
+
+  does not contain a CMakeLists.txt file.
+
+
+-- Configuring incomplete, errors occurred!
+See also "/Users/yuhongc/scrimmage/my-scrimmage-plugins/CMakeFiles/CMakeOutput.log".
