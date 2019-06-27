@@ -39,6 +39,7 @@
 #include <scrimmage/parse/ParseUtils.h>
 
 #include <iostream>
+#include <fstream>
 #include <limits>
 #include "Python/Python.h"
 
@@ -83,6 +84,12 @@ bool KeyboardControl::step_autonomy(double t, double dt) {
             follow_id_ = it->first;
         }
     }
+
+    std::ifstream infile;
+    infile.open("~/test.t");
+    char data[100];
+    infile >> data;
+    cout << data;
 
 
     // Head toward entity on other team

@@ -94,7 +94,11 @@ void CameraInterface::OnKeyPress() {
     } else if (key == "semicolon") {
       last_key_ = key;
     } else {
-        // cout << "key: " << key << endl;
+        cout << "key: " << key << endl;
+        std::ofstream temp_file;
+        temp_file.open("~/temp.t");
+        temp_file << key;
+        temp_file.close();
     }
 
     // Forward events

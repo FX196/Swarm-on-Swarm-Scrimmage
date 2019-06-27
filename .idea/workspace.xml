@@ -10,7 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37aef160-6ab2-42b8-acd0-c315890d8876" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/scripts/generate-plugin.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/generate-plugin.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-scrimmage-plugins/src/plugins/autonomy/KeyboardControl/KeyboardControl.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/my-scrimmage-plugins/src/plugins/autonomy/KeyboardControl/KeyboardControl.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/viewer/CameraInterface.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewer/CameraInterface.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,9 +35,11 @@
         <counts>
           <entry key="Makefile" value="1" />
           <entry key="cmake" value="1" />
-          <entry key="cpp" value="4" />
+          <entry key="cpp" value="18" />
           <entry key="dylib" value="3" />
+          <entry key="h" value="1" />
           <entry key="o" value="1" />
+          <entry key="py" value="5" />
           <entry key="txt" value="4" />
           <entry key="xml" value="6" />
         </counts>
@@ -45,21 +49,22 @@
           <entry key="CMakeCache.txt" value="1" />
           <entry key="CMakeLists.txt" value="4" />
           <entry key="Makefile" value="1" />
-          <entry key="ObjectiveC" value="4" />
+          <entry key="ObjectiveC" value="19" />
           <entry key="PLAIN_TEXT" value="4" />
+          <entry key="Python" value="5" />
           <entry key="XML" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="371" />
+          <entry key="cpp" value="557" />
           <entry key="xml" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Doxygen file" value="4" />
-          <entry key="ObjectiveC" value="367" />
+          <entry key="ObjectiveC" value="553" />
           <entry key="XML" value="22" />
         </counts>
       </usages-collector>
@@ -79,8 +84,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/my-scrimmage-plugins/src/plugins/autonomy/KeyboardControl/KeyboardControl.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="85" selection-start-line="85" selection-end-line="85" />
+            <state relative-caret-position="-487">
+              <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/viewer/CameraInterface.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="500">
+              <caret line="100" column="26" selection-start-line="100" selection-start-column="26" selection-end-line="100" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -91,6 +105,9 @@
     <findStrings>
       <find>terr</find>
       <find>Initi</find>
+      <find>char</find>
+      <find>keyb</find>
+      <find>PYBIND</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -102,6 +119,7 @@
         <option value="$PROJECT_DIR$/missions/arducopter.xml" />
         <option value="$PROJECT_DIR$/my-scrimmage-plugins/src/plugins/autonomy/ExamplePlugin/ExamplePlugin.cpp" />
         <option value="$PROJECT_DIR$/my-scrimmage-plugins/missions/keyboard_demo.xml" />
+        <option value="$PROJECT_DIR$/src/viewer/CameraInterface.cpp" />
         <option value="$PROJECT_DIR$/my-scrimmage-plugins/src/plugins/autonomy/KeyboardControl/KeyboardControl.cpp" />
       </list>
     </option>
@@ -128,41 +146,6 @@
             <path>
               <item name="my-scrimmage-plugins" type="b2602c69:ProjectViewProjectNode" />
               <item name="scrimmage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="my-scrimmage-plugins" type="b2602c69:ProjectViewProjectNode" />
-              <item name="scrimmage" type="462c0819:PsiDirectoryNode" />
-              <item name="my-scrimmage-plugins" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="my-scrimmage-plugins" type="b2602c69:ProjectViewProjectNode" />
-              <item name="scrimmage" type="462c0819:PsiDirectoryNode" />
-              <item name="my-scrimmage-plugins" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="my-scrimmage-plugins" type="b2602c69:ProjectViewProjectNode" />
-              <item name="scrimmage" type="462c0819:PsiDirectoryNode" />
-              <item name="my-scrimmage-plugins" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="plugins" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="my-scrimmage-plugins" type="b2602c69:ProjectViewProjectNode" />
-              <item name="scrimmage" type="462c0819:PsiDirectoryNode" />
-              <item name="my-scrimmage-plugins" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="plugins" type="462c0819:PsiDirectoryNode" />
-              <item name="autonomy" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="my-scrimmage-plugins" type="b2602c69:ProjectViewProjectNode" />
-              <item name="scrimmage" type="462c0819:PsiDirectoryNode" />
-              <item name="my-scrimmage-plugins" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="plugins" type="462c0819:PsiDirectoryNode" />
-              <item name="autonomy" type="462c0819:PsiDirectoryNode" />
-              <item name="KeyboardControl" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -209,12 +192,12 @@
       <updated>1561239775321</updated>
       <workItem from="1561426652724" duration="6187000" />
       <workItem from="1561578256528" duration="573000" />
-      <workItem from="1561613832710" duration="2220000" />
+      <workItem from="1561613832710" duration="4109000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8980000" />
+    <option name="totallyTimeSpent" value="10869000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -325,10 +308,106 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/python/scrimmage/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/scrimmage/proto_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-680" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/scrimmage/openai_grpc_link.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-609" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/scrimmage/simcontrol/SimControl.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1052" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/scrimmage/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-422" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/simcontrol/SimUtils.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="71" column="37" selection-start-line="71" selection-start-column="37" selection-end-line="71" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/log/FrameUpdateClient.cpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/ParameterServer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-386" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/Utilities.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2420" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/VariableIO.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2930" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/autonomy/Autonomy.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-950" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/network/Interface.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4265" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugin_manager/MotionModel.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-680" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/autonomy/python/straight.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/autonomy/PyAutonomy/PyAutonomy.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="43" column="16" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/simcontrol/SimControl.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1249">
+          <caret line="658" column="43" selection-start-line="658" selection-start-column="43" selection-end-line="658" selection-end-column="43" />
+          <folding>
+            <element signature="e#2549#2579#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/viewer/CameraInterface.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="100" column="26" selection-start-line="100" selection-start-column="26" selection-end-line="100" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/my-scrimmage-plugins/src/plugins/autonomy/KeyboardControl/KeyboardControl.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="85" selection-start-line="85" selection-end-line="85" />
+        <state relative-caret-position="-487">
+          <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
         </state>
       </provider>
     </entry>
