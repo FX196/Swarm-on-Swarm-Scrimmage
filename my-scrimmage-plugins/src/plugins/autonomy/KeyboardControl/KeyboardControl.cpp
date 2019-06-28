@@ -31,6 +31,7 @@
  */
 
 #define PY_SSIZE_T_CLEAN
+
 #include <my-scrimmage-plugins/plugins/autonomy/KeyboardControl/KeyboardControl.h>
 
 #include <scrimmage/plugin_manager/RegisterPlugin.h>
@@ -49,66 +50,79 @@ using std::endl;
 namespace sc = scrimmage;
 
 REGISTER_PLUGIN(scrimmage::Autonomy,
-                scrimmage::autonomy::KeyboardControl,
-                KeyboardControl_plugin)
+        scrimmage::autonomy::KeyboardControl,
+        KeyboardControl_plugin
+)
 
 namespace scrimmage {
-namespace autonomy {
+    namespace autonomy {
 
-void KeyboardControl::init(std::map<std::string, std::string> &params) {
-    initial_speed_ = sc::get<double>("initial_speed", params, initial_speed_);
+        void KeyboardControl::init(std::map <std::string, std::string> &params) {
+            initial_speed_ = sc::get<double>("initial_speed", params, initial_speed_);
 
-    desired_alt_idx_ = vars_.declare(VariableIO::Type::desired_altitude, VariableIO::Direction::Out);
-    desired_speed_idx_ = vars_.declare(VariableIO::Type::desired_speed, VariableIO::Direction::Out);
-    desired_heading_idx_ = vars_.declare(VariableIO::Type::desired_heading, VariableIO::Direction::Out);
-}
-
-bool KeyboardControl::step_autonomy(double t, double dt) {
-    // Find nearest entity on other team. Loop through each contact, calculate
-    // distance to entity, save the ID of the entity that is closest.
-    double min_dist = std::numeric_limits<double>::infinity();
-    for (auto it = contacts_->begin(); it != contacts_->end(); it++) {
-
-        // Skip if this contact is on the same team
-        if (it->second.id().team_id() == parent_->id().team_id()) {
-            continue;
+            desired_alt_idx_ = vars_.declare(VariableIO::Type::desired_altitude, VariableIO::Direction::Out);
+            desired_speed_idx_ = vars_.declare(VariableIO::Type::desired_speed, VariableIO::Direction::Out);
+            desired_heading_idx_ = vars_.declare(VariableIO::Type::desired_heading, VariableIO::Direction::Out);
         }
 
-        // Calculate distance to entity
-        double dist = (it->second.state()->pos() - state_->pos()).norm();
+        bool KeyboardControl::step_autonomy(double t, double dt) {
+            // Find nearest entity on other team. Loop through each contact, calculate
+            // distance to entity, save the ID of the entity that is closest.
+            double min_dist = std::numeric_limits<double>::infinity();
+            for (auto it = contacts_->begin(); it != contacts_->end(); it++) {
 
-        if (dist < min_dist) {
-            // If this is the minimum distance, save distance and reference to
-            // entity
-            min_dist = dist;
-            follow_id_ = it->first;
+                // Skip if this contact is on the same team
+                if (it->second.id().team_id() == parent_->id().team_id()) {
+                    continue;
+                }
+
+                // Calculate distance to entity
+                double dist = (it->second.state()->pos() - state_->pos()).norm();
+
+                if (dist < min_dist) {
+                    // If this is the minimum distance, save distance and reference to
+                    // entity
+                    min_dist = dist;
+                    follow_id_ = it->first;
+                }
+            }
+
+            const char *path = "test.data";
+            std::ifstream file(path); //open in constructor
+            std::string data;
+
+            int delta_altitude = 0;
+            float delta_heading = 0.0;
+
+            if (file.is_open() == 1) {
+                // process command
+                file >> data;
+                cout << "current command: " << data << endl;
+                std::remove(path);
+
+                if (data == "j") {
+                    delta_heading += 0.15;
+                } else if (data == "k") {
+                    delta_altitude -= 5;
+                } else if (data == "l") {
+                    delta_heading -= 0.15;
+                } else if (data == "i") {
+                    delta_altitude += 5;
+                }
+            }
+
+            vars_.output(desired_heading_idx_, state_->quat().yaw() + delta_heading);
+            cout << "heading: " << state_->quat().yaw() + delta_heading << endl;
+
+            // Match entity's altitude
+            vars_.output(desired_alt_idx_, state_->pos()(2) + delta_altitude);
+            cout << "altitude: " << state_->pos()(2) + delta_altitude << endl;
+
+            // Maintain speed
+            vars_.output(desired_speed_idx_, initial_speed_);
+
+
+            return true;
         }
-    }
-
-    std::ifstream infile;
-    infile.open("~/test.t");
-    char data[100];
-    infile >> data;
-    cout << data;
-
-
-    // Head toward entity on other team
-    if (contacts_->count(follow_id_) > 0) {
-        // Get a reference to the entity's state.
-        sc::StatePtr ent_state = contacts_->at(follow_id_).state();
-
-        // Calculate the required heading to follow the other entity
-        double heading = atan2(ent_state->pos()(1) - state_->pos()(1),
-                               ent_state->pos()(0) - state_->pos()(0));
-        vars_.output(desired_heading_idx_, heading);
-
-        // Match entity's altitude
-        vars_.output(desired_alt_idx_, ent_state->pos()(2));
-
-        // Maintain speed
-        vars_.output(desired_speed_idx_, initial_speed_);
-    }
-    return true;
-}
-} // namespace autonomy
+    } // namespace autonomy
 } // namespace scrimmage

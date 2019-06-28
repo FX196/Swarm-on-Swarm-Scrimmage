@@ -95,10 +95,12 @@ void CameraInterface::OnKeyPress() {
       last_key_ = key;
     } else {
         cout << "key: " << key << endl;
-        std::ofstream temp_file;
-        temp_file.open("~/temp.t");
-        temp_file << key;
-        temp_file.close();
+        const char *path="test.data";
+        std::ofstream file(path); //open in constructor
+        std::string data(key);
+        file << data;
+        file.close();
+        cout << "wrote to file" << endl;
     }
 
     // Forward events
